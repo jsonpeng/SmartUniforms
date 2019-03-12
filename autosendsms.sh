@@ -1,0 +1,1 @@
+*/5 * * * * php /var/www/shop/jidingjia/artisan schedule:run >> /dev/null 2>&1

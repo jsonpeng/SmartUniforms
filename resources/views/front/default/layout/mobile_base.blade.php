@@ -65,23 +65,28 @@
             <p style="text-align: center;font-size: 16px;color: white;">Making premium school uniform since 1999</p>
     </div>
 
-    <div class="row" style="position: absolute;bottom: 0;    width: 100%;
-    padding-bottom: 5px;"> 
-        <div style="    width: 30%;
+    <div class="row" style="position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-around;"> 
+        <div style="
     float: left;
     font-size: 14px;
     color: white;    margin-left: 20px;position: relative;padding-left: 16px;">
             <img src="{{ asset('images/12.8/footer/logo1.png') }}" style="position: absolute;left: -12px;top: 10px" />
            <p style="display: inline-block;"> {!! getSettingValueByKeyCache('icp') !!} </p>
         </div>
-        <div style="    width: 30%;
+        <div style="
     float: left;
     font-size: 14px;
     color: white;    margin-left: 20px;position: relative;padding-left: 16px;">
             <img src="{{ asset('images/12.8/footer/logo2.png') }}" style="position: absolute;left: -12px;top: 10px" />
             <p style="display: inline-block;">{!! getSettingValueByKeyCache('service_tel') !!}</p>
         </div>
-        <div style="    width: 30%;
+        <div style="
     float: left;
     font-size: 14px;
     color: white;    margin-left: 20px;position: relative;padding-left: 16px;">

@@ -16,6 +16,7 @@
         position: absolute;
         top: 180px;
         left: 168px;
+        width: 100px;
     }
     .product1_h4{
         position: absolute;

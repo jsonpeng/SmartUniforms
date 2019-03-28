@@ -204,13 +204,7 @@
 
     <div class="page__bd section-margin bill">
         <div class="weui-cells weui-cells_form">
-            <div class="weui-cell weui-cell_switch">
-              {{-- <div class="weui-cell__bd">快递方式</div> --}}
-              <div class="weui-cell__ft">
-                 {{--  <input type="checkbox" class="weui-switch" id="invoice" name="invoice"> --}}
-              </div>
-            </div>
-            <div id="invoice_detail" >
+            <div id="kuaidi-way" >
               <div class="weui-cell">
                   <div class="fistname">请选择快递方式</div>
               </div>

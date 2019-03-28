@@ -215,6 +215,7 @@
                   <div class="weui-cell__hd weui-icon-circle" title="学校自提">
                       <span>学校自提</span>
                   </div>
+                  <input type="hidden" name="kuaidi_way" value="快递到家" />
               </div>
             </div>
         </div>
@@ -404,6 +405,28 @@
       } else {
         $("#invoice_info").show();
       }
+    });
+
+    var needPay = parseFloat('{{ $needPay }}');
+    var freight = parseFloat('{{ $freight }}');
+    $('#kuaidi-way .weui-cell__hd').on('click', function() {
+      $("#invoice_detail .weui-cell__hd").removeClass('weui-icon-success');
+      $("#invoice_detail .weui-cell__hd").addClass('weui-icon-circle');
+      $(this).removeClass('weui-icon-circle');
+      $(this).addClass('weui-icon-success');
+
+      $('input[name=kuaidi_way]').val($(this).attr('title'));
+      var price;
+      if($(this).attr('title') == '快递到家')
+      {
+        $('#freight').parent().show();
+        freigth = freight;
+      }
+      else{
+        $('#freight').parent().hide();
+        freigth = 0;
+      }
+      setNeedPay();
     });
 
     

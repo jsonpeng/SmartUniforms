@@ -410,8 +410,8 @@
     var needPay = parseFloat('{{ $needPay }}');
     var freight = parseFloat('{{ $freight }}');
     $('#kuaidi-way .weui-cell__hd').on('click', function() {
-      $("#invoice_detail .weui-cell__hd").removeClass('weui-icon-success');
-      $("#invoice_detail .weui-cell__hd").addClass('weui-icon-circle');
+      $("#kuaidi-way .weui-cell__hd").removeClass('weui-icon-success');
+      $("#kuaidi-way .weui-cell__hd").addClass('weui-icon-circle');
       $(this).removeClass('weui-icon-circle');
       $(this).addClass('weui-icon-success');
 

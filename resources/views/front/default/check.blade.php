@@ -207,10 +207,10 @@
             <div class="weui-cell weui-cell_switch">
               <div class="weui-cell__bd">快递方式</div>
               <div class="weui-cell__ft">
-                  <input type="checkbox" class="weui-switch" id="invoice" name="invoice">
+                 {{--  <input type="checkbox" class="weui-switch" id="invoice" name="invoice"> --}}
               </div>
             </div>
-            <div id="invoice_detail" style="display: none;">
+            <div id="invoice_detail" >
               <div class="weui-cell">
                   <div class="fistname">请选择</div>
               </div>

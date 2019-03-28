@@ -201,6 +201,31 @@
     </div>
     @endif
 
+
+    <div class="page__bd section-margin bill">
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell weui-cell_switch">
+              <div class="weui-cell__bd">快递方式</div>
+              <div class="weui-cell__ft">
+                  <input type="checkbox" class="weui-switch" id="invoice" name="invoice">
+              </div>
+            </div>
+            <div id="invoice_detail" style="display: none;">
+              <div class="weui-cell">
+                  <div class="fistname">请选择</div>
+              </div>
+              <div class="weui-cell">
+                  <div class="weui-cell__hd weui-icon-circle" title="快递到家">
+                      <span>快递到家</span>
+                  </div>
+                  <div class="weui-cell__hd weui-icon-success" title="学校自提">
+                      <span>学校自提</span>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
     @if(funcOpen('FUNC_FUNDS') && $user->user_money >= 1)
     <div class="page__bd section-margin">
       <div class="weui-form-preview">

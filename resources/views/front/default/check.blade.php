@@ -203,7 +203,7 @@
 
 
     <div class="page__bd section-margin bill">
-        <div class="weui-cells weui-cells_form">
+        <div class="weui-cells weui-cells_form" style="    padding-bottom: 10px;">
             <div id="kuaidi-way" >
               <div class="weui-cell">
                   <div class="fistname">请选择快递方式</div>

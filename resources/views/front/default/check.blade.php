@@ -215,10 +215,10 @@
                   <div class="fistname">请选择</div>
               </div>
               <div class="weui-cell">
-                  <div class="weui-cell__hd weui-icon-circle" title="快递到家">
+                  <div class="weui-cell__hd weui-icon-success" title="快递到家">
                       <span>快递到家</span>
                   </div>
-                  <div class="weui-cell__hd weui-icon-success" title="学校自提">
+                  <div class="weui-cell__hd weui-icon-circle" title="学校自提">
                       <span>学校自提</span>
                   </div>
               </div>

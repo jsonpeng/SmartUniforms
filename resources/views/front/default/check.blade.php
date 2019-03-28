@@ -426,6 +426,7 @@
         $('#freight').parent().hide();
         freigth = 0;
       }
+      $('input[name=freight]').val(freigth);
       setNeedPay();
     });
 

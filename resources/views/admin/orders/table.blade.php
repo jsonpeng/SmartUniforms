@@ -1,6 +1,7 @@
 <table class="table table-responsive" id="orders-table">
     <thead>
         <th>订单编号</th>
+        <th>快递方式</th>
         <th class="hidden-sm hidden-xs">订单金额</th>
         <th>订单状态</th>
         <th>物流状态</th>
@@ -15,6 +16,7 @@
     @foreach($orders as $order)
         <tr>
                 <td>{!! $order->snumber !!}</td>
+                <td>{!! $order->kuaidi_way !!}</td>
                 <td class="hidden-sm hidden-xs">{!! $order->price !!}</td>
                  <td>{!! $order->order_status !!}</td>
                 <td>

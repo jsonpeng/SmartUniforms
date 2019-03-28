@@ -62,7 +62,8 @@ class Order extends Model
         'confirm_time',
         'paytime',
         'code',
-        'backup01'
+        'backup01',
+        'kuaidi_way'
     ];
 
     /**

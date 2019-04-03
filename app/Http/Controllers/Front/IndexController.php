@@ -347,6 +347,11 @@ class IndexController extends Controller
         return view(frontView('main_index'));
     }
 
+    public function clothProxy(Request $request)
+    {
+        return view(frontView('cloth_proxy'));
+    }
+
     //新首页mobile版
     public function mainIndexMobile(Request $request)
     {

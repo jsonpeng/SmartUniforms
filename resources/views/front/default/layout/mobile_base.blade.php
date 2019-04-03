@@ -35,7 +35,8 @@
             <dt><img src="/images/jidingjia_new_t.png" class="img_auto" style="width: 120px;height: auto;text-align: center;" alt="jidingjia"></dt>
             <dd><a href="/m/index">我们是谁</a></dd>
             <dd><a href="/">产品展示</a></dd>
-             <dd><a href="/usercenter">用户中心</a></dd>
+            <dd><a href="/usercenter">用户中心</a></dd>
+            <dd><a href="/cloth_proxy">校服代理</a></dd>
         </dl>
         <div class="tel" style="font-size: 24px;">
             <i class="iconfont icon-dianhua"></i> {!! getSettingValueByKeyCache('service_tel') !!}
@@ -109,7 +110,7 @@
         <a href="/m/index" class="iconfont icon-xinxi z-kefu">
             <!-- <span>0</span> -->
         </a>
-        <a href="javascript:;" class="btn z-tel"><i class="iconfont icon-dianhua"></i><span>电话联系</span></a>
+        <a href="tel:{!! getSettingValueByKeyCache('service_tel') !!}" class="btn z-tel"><i class="iconfont icon-dianhua"></i><span>电话联系</span></a>
     </nav>
 </footer>
 <a href="javascript:;" class="iconfont icon-shang back-top"></a>

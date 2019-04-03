@@ -36,10 +36,14 @@ Route::group(['middleware' => ['api']], function () {
 
 //新首页
 Route::get('/index','Front\IndexController@mainIndex');
+//校服代理
+Route::get('cloth_proxy','Front\IndexController@clothProxy');
 
 Route::group(['prefix'=>'m'],function(){
 	//移动端首页
 	Route::get('index','Front\IndexController@mainIndexMobile');
+
+
 });
 
 

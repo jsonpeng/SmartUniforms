@@ -22,7 +22,7 @@
 @section('js')
 <script type="text/javascript">
 $('.proxy_img').click(function(){
-    $('.proxy_a_tel').trigger('click');
+    $('.proxy_a_tel').click();
 });
 </script>
 @endsection

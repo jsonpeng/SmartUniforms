@@ -5,7 +5,7 @@
         <i class="icon ion-home"></i>
         <p class="weui-tabbar__label">首页</p>
     </a>
-    <a href="/category" class="weui-tabbar__item @if($tabIndex == 2) weui-bar__item_on @endif">
+    <a href="/" class="weui-tabbar__item @if($tabIndex == 2) weui-bar__item_on @endif">
 {{--         <img src="{{ asset('images/default/index/start.png') }}" alt="" class="weui-tabbar__icon">
         <img src="{{ asset('images/default/index/startdefult.png') }}" alt="" class="weui-tabbar__icon"> --}}
         <i class="icon ion-android-star"></i>

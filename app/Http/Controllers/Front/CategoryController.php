@@ -58,13 +58,14 @@ class CategoryController extends Controller
         $products = [];
         $user = auth('web')->user();
 
-        if(!empty($user->school_name)){
-             $products = $this->productRepository->products(0,1000,'校服',$user->school_name);
+        if(!empty($user->school_name))
+        {
+             $products = $this->productRepository->products(0,1000,'校服',$request->get('school_name'));
             // $products = $products->filter(function($item) use($user){
             //     return $item->school_name == $user->school_name;
             // });
         }
-        return view(frontView('cat.nocat.index'))->with('products',$products);
+        return view(frontView('my_school_product'))->with('products',$products);
     }
 
     public function ajaxProducts(Request $request)

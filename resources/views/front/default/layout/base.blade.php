@@ -57,7 +57,8 @@
         /*.chooseDimension .addcart{  border-top: 1px solid {{ themeMainColor()}};}*/
         .chooseDimension .buynow{  background-color: {{ themeMainColor()}};}
         #product_price{  color: #ff4e44;}
-        .choicsel .choic-sel a.red{ background-color:{{ themeMainColor() }};margin-bottom:15px;display: inline-block; }
+        .choicsel .choic-sel a.red{ background-color:{{ themeMainColor() }};}
+        .choicsel .choic-sel a.red,.choicsel .choic-sel a {margin-bottom:15px;display: inline-block; }
         .switcher .active{  color: {{ themeMainColor()}};}
         .weui-cell.rollTip{  background-color: {{ themeMainColor()}};}
         .zcjy-product-cart .price{  color: #ff4e44;}

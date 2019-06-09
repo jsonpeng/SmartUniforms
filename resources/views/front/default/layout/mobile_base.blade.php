@@ -17,11 +17,11 @@
         }
     </style>
     @yield('title') 
-    <link rel="stylesheet" href="http://m.halfrin.com/iconfont/iconfont.css">
-    <link rel="stylesheet" href="http://m.halfrin.com/swiper/swiper.min.css">
-    <link rel="stylesheet" href="http://m.halfrin.com/css/style.css">
-    <script src="http://m.halfrin.com/js/jquery.min.js"></script>
-    <script src="http://m.halfrin.com/swiper/swiper.min.js"></script>
+    <link rel="stylesheet" href="http://www.halfrin.com/mobile/assets/iconfont/iconfont.css">
+    <link rel="stylesheet" href="http://www.halfrin.com/mobile/assets/swiper/swiper.min.css">
+    <link rel="stylesheet" href="http://www.halfrin.com/mobile/assets/css/style.css">
+    <script src="http://www.halfrin.com/mobile/assets/js/jquery.min.js"></script>
+    <script src="http://www.halfrin.com/mobile/assets/swiper/swiper.min.js"></script>
     @yield('css')
 </head>
 <body youdao="bind">
@@ -49,7 +49,7 @@
         <img src="/images/jidingjia_new_t.png" style="height: 60px;" alt="吉丁甲"> 
     </div>
     <span class="z-fanyi" style="color:rgb(72,159,248);font-size: 24px;right: 80px;font-weight: 700">国际校服定制</span>
-   {{--  <a class="z-fanyi" href="http://halfrin.com/index-en.html"><img src="http://m.halfrin.com/images/en.png"></a> --}}
+   {{--  <a class="z-fanyi" href="http://halfrin.com/index-en.html"><img src="http://www.halfrin.com/mobile/assets/images/en.png"></a> --}}
 </header>
 <!-- 页头公用----------------------------------------------------------------------------end -->
 
@@ -118,7 +118,7 @@
 
 
 
-<script src="http://m.halfrin.com/js/script.js"></script>
+<script src="http://www.halfrin.com/mobile/assets/js/script.js"></script>
 <script>        
     var mySwiper = new Swiper ('.swiper-container', {
         loop: true,

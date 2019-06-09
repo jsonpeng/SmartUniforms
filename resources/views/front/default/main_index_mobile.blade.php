@@ -104,12 +104,12 @@
             </div>
             @if($i==1 || $i==3)
                 @if(isset($banners) && count($banners))
-                    <div class="http://m.halfrin.com/duland-show swiper-container swiper-container-horizontal swiper-container-ios" style="margin-top: 200px;
+                    <div class="http://www.halfrin.com/mobile/assets/duland-show swiper-container swiper-container-horizontal swiper-container-ios" style="margin-top: 200px;
             margin-left: 6.5%;">
                     <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-4800px, 0px, 0px);">
                         @foreach($banners as $banner)
                             <div class="swiper-slide swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 600px;">
-                                <img onerror="javascript:this.src='http://m.halfrin.com/duland-show/img1.jpg';" src="{!! $banner->image !!}">
+                                <img onerror="javascript:this.src='http://www.halfrin.com/mobile/assets/duland-show/img1.jpg';" src="{!! $banner->image !!}">
                             </div>
                         @endforeach
                     </div>

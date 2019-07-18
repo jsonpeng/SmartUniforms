@@ -21,6 +21,9 @@ if (Config::get('web.app_env') == 'local'){
 
 //微信支付
 Route::get('/pay_weixin/{order_id}','Front\PayController@payWechat');
+//微信支付征订
+Route::get('/pay_zd/{price}','Front\PayController@payZhengDing');
+
 Route::any('/notify_wechcat_pay', 'Front\PayController@payWechatNotify');
 //PAYS_API支付
 Route::get('/pays_api/{order_id}', 'Front\PayController@paysApi');

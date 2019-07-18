@@ -373,7 +373,7 @@ form input[type="file"] {
                               <td><input name="zengding[]" type="number" class="zengding_input" value="1" /></td>
                           {{--     <td></td> --}}
                               <input name="tuihui[]" type="hidden"  value="0" />
-                              <td onclick="$(this).parent().remove();">删除</td>
+                              <td onclick="deleteElement(this)">删除</td>
                             </tr>
                             </tbody>
                           </table>
@@ -435,6 +435,10 @@ form input[type="file"] {
 @section('js')
 <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
+    function deleteElement(that){
+        $(that).parent().remove();
+        countAllPrice();
+    }
 
   //先输入学校代码
   $(function(){

@@ -433,6 +433,7 @@ form input[type="file"] {
 
 
 @section('js')
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 
   //先输入学校代码
@@ -528,25 +529,9 @@ form input[type="file"] {
       return false;
 
     }
+    
+    wechatPayZd(all);
 
-   $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-   $.ajax({
-        url:'/create_consult',
-        type:'POST',
-        data:$('form').serialize(),
-        success:function(data){
-          if(data.code==0){
-            alert(data.message);   
-            location.href="/consultRecords/征订单";    
-          }else{
-            alert(data.message);
-          }
-        }
-    });
   });
 
 
@@ -656,9 +641,8 @@ form input[type="file"] {
    
  }
 
-
+ var all =0; 
 function countAllPrice(){
-   var all =0; 
     $('#schools-tbody-show').children('tr').each(function(){
         var price =parseFloat($(this).find('.price_input').val());
         var num = parseInt($(this).find('input[type=number]').val());
@@ -671,5 +655,93 @@ $(document).on('keyup','.zengding_input',function(){
     countAllPrice();
 });
 
+
+function onBridgeReady(message) {
+    data = JSON.parse(message);
+    /* global WeixinJSBridge:true */
+    WeixinJSBridge.invoke(
+      'getBrandWCPayRequest', {
+        'appId': data.appId, // 公众号名称，由商户传入
+        'timeStamp': data.timeStamp, // 时间戳，自1970年以来的秒数
+        'nonceStr': data.nonceStr, // 随机串
+        'package': data.package,
+        'signType': data.signType, // 微信签名方式：
+        'paySign': data.paySign // 微信签名
+      },
+      function (res) {
+        // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回ok，但并不保证它绝对可靠。
+        if (res.err_msg === 'get_brand_wcpay_request:ok') {
+            
+            alert('支付成功');
+            createConsultRecords();
+            
+        } else {
+            alert('支付失败,错误信息: ' + res.err_msg);
+        }
+      }
+    );
+  }
+  
+  function createConsultRecords(){
+    $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+   $.ajax({
+        url:'/create_consult',
+        type:'POST',
+        data:$('form').serialize(),
+        success:function(data){
+          if(data.code==0){
+            alert(data.message);   
+            location.href="/consultRecords/征订单";    
+          }else{
+            alert(data.message);
+          }
+        }
+    });
+  }
+  
+  /**
+     * 微信支付
+     * @return {[type]} [description]
+     */
+    function wechatPayZd(price) {
+      if(price == null || price == ''){
+        alert('请选择有效的校服!');
+        return;
+      }
+      event.preventDefault();
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+      });
+      $.ajax({
+          url:"/pay_zd/"+price,
+          type:"GET",
+          data:'',
+          success: function(data) {
+            if (data.code) {
+              alert(data.message);
+            }else {
+              if (typeof WeixinJSBridge === 'undefined') { // 微信浏览器内置对象。参考微信官方文档
+                if (document.addEventListener) {
+                  document.addEventListener('WeixinJSBridgeReady', onBridgeReady(data.message), false)
+                } else if (document.attachEvent) {
+                  document.attachEvent('WeixinJSBridgeReady', onBridgeReady(data.message))
+                  document.attachEvent('onWeixinJSBridgeReady', onBridgeReady(data.message))
+                }
+              } else {
+                onBridgeReady(data.message)
+              }
+            }
+          },
+          error: function(data) {
+              //提示失败消息
+          },
+      });
+    }
 </script>
 @endsection

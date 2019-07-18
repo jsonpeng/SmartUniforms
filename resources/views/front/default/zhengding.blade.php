@@ -591,7 +591,7 @@ form input[type="file"] {
       var that =this;
       if(!$.empty($(that).val())){
           $.zcjyRequest('/getPriceByNameAndChima',function(res){
-                // $(that).parent().parent().find('.price_input').val(res);
+                $(that).parent().parent().find('.price_input').val(res);
                 countAllPrice();
                  layer.confirm('规格选择完毕,是否继续添加校服?', {
                   btn: ['确定','提交成功'] //按钮

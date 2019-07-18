@@ -677,6 +677,7 @@ function onBridgeReady(message) {
             
         } else {
             alert('支付失败,错误信息: ' + res.err_msg);
+            location.reload();
         }
       }
     );

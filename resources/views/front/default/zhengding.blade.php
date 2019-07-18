@@ -647,11 +647,13 @@ form input[type="file"] {
 
  var all =0; 
 function countAllPrice(){
+    var aPrice = 0;
     $('#schools-tbody-show').children('tr').each(function(){
         var price =parseFloat($(this).find('.price_input').val());
         var num = parseInt($(this).find('input[type=number]').val());
-        all += price*num;
+        aPrice += price*num;
     });
+    all = aPrice;
     $('.total_price').text(all);
 }
 

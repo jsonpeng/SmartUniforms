@@ -286,7 +286,7 @@ form .weui-cell .weui-cell__hd .weui-label,form .weui-cell .weui-cell__bd .weui-
 
             <div class="weui-cell">
                 <div class="weui-cell__hd">
-                    <label class="weui-label"><span style="color:#fc6a6b">*</span>家长联系方式</label>
+                    <label class="weui-label"><span style="color:#fc6a6b">*</span>联系方式</label>
                 </div>
                 <div class="weui-cell__bd">
                     <input class="weui-input" type="text" name="commit"  maxlength="11" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="请输入联系方式">

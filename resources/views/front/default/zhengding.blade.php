@@ -375,7 +375,7 @@ form .weui-cell .weui-cell__hd .weui-label,form .weui-cell .weui-cell__bd .weui-
                              
                               <!-- <td class="price">0</td> -->
                               <td><input type="text" name="price[]" class="price_input" value="0" readonly="true" /></td>
-                              <td><input name="zengding[]" type="number" class="zengding_input" value="1" /></td>
+                              <td><span style="padding-right: 5px;" onclick="actionZdInput('del',this)">-</span><input name="zengding[]" type="number" class="zengding_input" value="1" /><span style="padding-left: 5px;" onclick="actionZdInput('add',this)">+</span></td>
                           {{--     <td></td> --}}
                               <input name="tuihui[]" type="hidden"  value="0" />
                               <td onclick="deleteElement(this)">删除</td>
@@ -663,12 +663,25 @@ function countAllPrice(){
 }
 
 $(document).on('keyup','.zengding_input',function(){
-    if($(this).val() == '' || $(this).val() < 0)
+    if($(this).val() == '' || $(this).val() <= 0)
     {
       $(this).val(1);
     }
     countAllPrice();
 });
+
+function actionZdInput(action = 'del',obj)
+{
+  var num = $(obj).parent().find('input').val();
+  if(action == 'del')
+  {
+    --num;
+  }
+  else{
+    ++num;
+  }
+  $(obj).parent().find('input').val(num).trigger('keyup');
+}
 
 
 function onBridgeReady(message) {

@@ -187,6 +187,11 @@ form input[type="file"] {
 .hidden{
   display: none;
 }
+
+form .weui-cell .weui-cell__hd .weui-label,form .weui-cell .weui-cell__bd .weui-input,.weui-select,form .weui-cell .weui-cell__bd,.weui-textarea {
+  font-size: 16px;
+}
+
 </style>
 @endsection
 
@@ -658,6 +663,10 @@ function countAllPrice(){
 }
 
 $(document).on('keyup','.zengding_input',function(){
+    if($(this).val() == '' || $(this).val() < 0)
+    {
+      $(this).val(1);
+    }
     countAllPrice();
 });
 

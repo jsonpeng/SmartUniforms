@@ -170,7 +170,16 @@
 <!-- 文件上传 -->
 <!--script src="{{ asset('js/default/ajaxfileupload.js') }}"></script-->
 <!--script src="{{ asset('vendor/jweixin-1.0.0.js') }}"></script-->
-
+<script>
+window.alert = function(name){
+var iframe = document.createElement("IFRAME");
+iframe.style.display="none";
+iframe.setAttribute("src", 'data:text/plain,');
+document.documentElement.appendChild(iframe);
+window.frames[0].window.alert(name);
+iframe.parentNode.removeChild(iframe);
+}
+<script>
 @yield('js')
 <script>
     $("img.lazy").lazyload({effect: "fadeIn"});

@@ -795,7 +795,7 @@ function onBridgeReady(message) {
           }
       });
       $.ajax({
-          url:"/pay_zd/"+price+"?type=2",
+          url:"/pays_api_zd/"+price+"?type=2",
           type:"GET",
           data:'',
           success: function(data) {

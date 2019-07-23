@@ -797,7 +797,7 @@ function onBridgeReady(message) {
       $.ajax({
           url:"/pays_api_zd/"+price+"?type=2",
           type:"GET",
-          data:'',
+          data:{param:$('#form_project_create').serialize()},
           success: function(data) {
             if (data.code) {
         

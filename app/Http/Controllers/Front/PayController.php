@@ -29,7 +29,7 @@ class PayController extends Controller
     public function paysZDApi(Request $request,$price)
     {
         $out_trade_no = time();
-        $body = '支付订单'.$$out_trade_no.'费用';
+        $body = '支付征订单';
         $user =auth('web')->user();
 
         $orderuid = optional($user)->id;       //此处传入您网站用户的用户名，方便在paysapi后台查看是谁付的款，强烈建议加上。可忽略。

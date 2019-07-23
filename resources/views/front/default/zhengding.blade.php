@@ -789,7 +789,6 @@ function onBridgeReady(message) {
     //个人微信支付
     function paysApi(price) {
       event.preventDefault();
-      hideActionSheet();
       $.ajaxSetup({
           headers: {
               'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Log;
 
 use EasyWeChat\Factory;
 use App\Models\Order;
-
+use Cache;
 
 class PayController extends Controller
 {
@@ -33,7 +33,10 @@ class PayController extends Controller
         $user =auth('web')->user();
 
         $orderuid = optional($user)->id;       //此处传入您网站用户的用户名，方便在paysapi后台查看是谁付的款，强烈建议加上。可忽略。
-
+	
+	//存入数据
+	Cache::put('zd_param_'.$orderuid,$request->input('param'),5);
+	    
         //校验传入的表单，确保价格为正常价格（整数，1位小数，2位小数都可以），支付渠道只能是1或者2，orderuid长度不要超过33个中英文字。
         $istype = 2;
         if ($request->has('type') && $request->input('type') == 1) {
@@ -72,6 +75,7 @@ class PayController extends Controller
     {
         $inputs = $request->all();
         $orderid = $inputs["orderid"];
+	Log::info('支付成功同步数据'.$inputs);
         return view(frontView('pay.pay_success'));
     }
 
@@ -100,6 +104,7 @@ class PayController extends Controller
             return $this->jsonError("key值不匹配");
         }else{
            #支付成功
+	    Log::info('支付成功异步数据'.$inputs);
         }
 
     }

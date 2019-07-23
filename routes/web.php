@@ -24,6 +24,12 @@ Route::get('/pay_weixin/{order_id}','Front\PayController@payWechat');
 //微信支付征订
 Route::get('/pay_zd/{price}','Front\PayController@payZhengDing');
 
+//微信个人支付支付征订
+Route::get('/pays_api_zd/{price}','Front\PayController@paysZDApi');
+Route::any('/paysapi_zd_return', 'Front\PayController@paysapiZDReturn');
+Route::any('/paysapi_zd_notify', 'Front\PayController@paysapiZDNotify');
+
+
 Route::any('/notify_wechcat_pay', 'Front\PayController@payWechatNotify');
 //PAYS_API支付
 Route::get('/pays_api/{order_id}', 'Front\PayController@paysApi');

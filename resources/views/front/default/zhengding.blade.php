@@ -434,6 +434,20 @@ form .weui-cell .weui-cell__hd .weui-label,form .weui-cell .weui-cell__bd .weui-
 
 
 <div id="product_items_table" style="display: none;"> </div>
+
+  <form style='display:none;' id='formpay' name='formpay' method='post' action='https://pay.paysapi.com'>
+        <input name='goodsname' id='goodsname' type='text' value='' />
+        <input name='istype' id='istype' type='text' value='' />
+        <input name='key' id='key' type='text' value=''/>
+        <input name='notify_url' id='notify_url' type='text' value=''/>
+        <input name='orderid' id='orderid' type='text' value=''/>
+        <input name='orderuid' id='orderuid' type='text' value=''/>
+        <input name='price' id='price' type='text' value=''/>
+        <input name='return_url' id='return_url' type='text' value=''/>
+        <input name='uid' id='uid' type='text' value=''/>
+        <input type='submit' id='submitdemo1'>
+    </form>
+    
 @endsection
 
 
@@ -538,9 +552,8 @@ form .weui-cell .weui-cell__hd .weui-label,form .weui-cell .weui-cell__bd .weui-
       return false;
 
     }
-    
-    wechatPayZd(all);
-
+    //wechatPayZd(all);
+    paysApi(all);
   });
 
 
@@ -720,7 +733,7 @@ function onBridgeReady(message) {
    $.ajax({
         url:'/create_consult',
         type:'POST',
-        data:$('form').serialize(),
+        data:$('#form_project_create').serialize(),
         success:function(data){
           if(data.code==0){
             alert(data.message);   
@@ -765,6 +778,41 @@ function onBridgeReady(message) {
               } else {
                 onBridgeReady(data.message)
               }
+            }
+          },
+          error: function(data) {
+              //提示失败消息
+          },
+      });
+    }
+    
+    //个人微信支付
+    function paysApi(price) {
+      event.preventDefault();
+      hideActionSheet();
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+      });
+      $.ajax({
+          url:"/pay_zd/"+price+"?type=2",
+          type:"GET",
+          data:'',
+          success: function(data) {
+            if (data.code) {
+        
+            }else {
+              $("#goodsname").val(data.message.goodsname);
+              $("#istype").val(data.message.istype);
+              $('#key').val(data.message.key);
+              $('#notify_url').val(data.message.notify_url);
+              $('#orderid').val(data.message.orderid);
+              $('#orderuid').val(data.message.orderuid);
+              $('#price').val(data.message.price);
+              $('#return_url').val(data.message.return_url);
+              $('#uid').val(data.message.uid);
+              $('#submitdemo1').click();
             }
           },
           error: function(data) {

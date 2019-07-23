@@ -37,6 +37,8 @@ class PayController extends Controller
 	//存入数据
 	Cache::put('zd_param_'.$orderuid,$request->input('param'),5);
 	    
+	Log::info('保存数据'.$request->input('param'));
+	    
         //校验传入的表单，确保价格为正常价格（整数，1位小数，2位小数都可以），支付渠道只能是1或者2，orderuid长度不要超过33个中英文字。
         $istype = 2;
         if ($request->has('type') && $request->input('type') == 1) {

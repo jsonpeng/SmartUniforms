@@ -20,6 +20,8 @@ class VerifyCsrfToken extends Middleware
         '/api/switchRefundUploadImage/*',
         '/paysapi_return',
         '/paysapi_notify',
+	'/paysapi_zd_return',
+	'/paysapi_zd_notify'
 
 	];
 }

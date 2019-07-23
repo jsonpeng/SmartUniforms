@@ -45,8 +45,8 @@ class PayController extends Controller
         $orderid = $out_trade_no;    //每次有任何参数变化，订单号就变一个吧。
         $uid = Config::get('paysapi.PAYS_API_UID');//"此处填写PaysApi的uid";
         $token = Config::get('paysapi.PAYS_API_TOKEN');//"此处填写PaysApi的Token";
-        $return_url = $request->root().'/paysapi_return';
-        $notify_url = $request->root().'/paysapi_notify';
+        $return_url = $request->root().'/paysapi_zd_return';
+        $notify_url = $request->root().'/paysapi_zd_notify';
         
         $key = md5($goodsname. $istype . $notify_url . $orderid . $orderuid . $price . $return_url . $token . $uid);
         //经常遇到有研发问为啥key值返回错误，大多数原因：1.参数的排列顺序不对；2.上面的参数少传了，但是这里的key值又带进去计算了，导致服务端key算出来和你的不一样。

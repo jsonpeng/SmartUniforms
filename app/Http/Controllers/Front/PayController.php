@@ -26,13 +26,13 @@ class PayController extends Controller
    /**
     *PAYS API支付
     */
-    public function paysApi(Request $request,$price)
+    public function paysZDApi(Request $request,$price)
     {
         $out_trade_no = time();
         $body = '支付订单'.$$out_trade_no.'费用';
         $user =auth('web')->user();
 
-        $orderuid = $user->id;       //此处传入您网站用户的用户名，方便在paysapi后台查看是谁付的款，强烈建议加上。可忽略。
+        $orderuid = optional($user)->id;       //此处传入您网站用户的用户名，方便在paysapi后台查看是谁付的款，强烈建议加上。可忽略。
 
         //校验传入的表单，确保价格为正常价格（整数，1位小数，2位小数都可以），支付渠道只能是1或者2，orderuid长度不要超过33个中英文字。
         $istype = 2;
@@ -68,7 +68,7 @@ class PayController extends Controller
      * @param    Request     $request [description]
      * @return   [type]               [description]
      */
-    public function paysapiReturn(Request $request)
+    public function paysapiZDReturn(Request $request)
     {
         $inputs = $request->all();
         $orderid = $inputs["orderid"];
@@ -80,7 +80,7 @@ class PayController extends Controller
      * @param    Request     $request [description]
      * @return   [type]               [description]
      */
-    public function paysapiNotify(Request $request)
+    public function paysapiZDNotify(Request $request)
     {
         $inputs = $request->all();
         $paysapi_id = $inputs["paysapi_id"];
@@ -102,32 +102,6 @@ class PayController extends Controller
            #支付成功
         }
 
-    }
-
-    /**
-     * PAYS API返回
-     */
-    //返回错误
-    private function jsonError($message = '',$url=null) 
-    {
-        $return['msg'] = $message;
-        $return['data'] = '';
-        $return['code'] = -1;
-        $return['url'] = $url;
-        return json_encode($return);
-    }
-
-    /**
-     * PAYS API返回
-     */
-    //返回正确
-    private function jsonSuccess($message = '',$data = '',$url=null) 
-    {
-        $return['msg']  = $message;
-        $return['data'] = $data;
-        $return['code'] = 1;
-        $return['url'] = $url;
-        return json_encode($return);
     }
 	
     //支付征订单

@@ -17,7 +17,7 @@
         }
     </style>
     @yield('title') 
-    <link rel="stylesheet" href="http://www.halfrin.com/mobile/assets/iconfont/iconfont.css">
+    <!-- <link rel="stylesheet" href="http://www.halfrin.com/mobile/assets/iconfont/iconfont.css"> -->
     <link rel="stylesheet" href="http://www.halfrin.com/mobile/assets/swiper/swiper.min.css">
     <link rel="stylesheet" href="http://www.halfrin.com/mobile/assets/css/style.css">
     <script src="http://www.halfrin.com/mobile/assets/js/jquery.min.js"></script>
@@ -48,7 +48,8 @@
     <div class="logo">
         <img src="/images/jidingjia_new_t.png" style="height: 60px;" alt="吉丁甲"> 
     </div>
-    <span class="z-fanyi" style="color:rgb(72,159,248);font-size: 24px;right: 80px;font-weight: 700">国际校服定制</span>
+    <span class="z-fanyi" style="color:rgb(72,159,248);font-size: 24px;right: 80px;font-weight: 700;    position: absolute;
+    top: 35px;">国际校服定制</span>
    {{--  <a class="z-fanyi" href="http://halfrin.com/index-en.html"><img src="http://www.halfrin.com/mobile/assets/images/en.png"></a> --}}
 </header>
 <!-- 页头公用----------------------------------------------------------------------------end -->
@@ -56,7 +57,7 @@
 @yield('content')
 
 
-<footer class="footer" style="background-image: url('{{  asset('images/12.8/640_12.jpg') }}');background-repeat: no-repeat;height: 287px;background-color:transparent;margin-bottom: 120px;position: relative;">
+<footer class="footer" style="background-image: url('{{  asset('images/12.8/640_12.jpg') }}');background-repeat: no-repeat;height: 287px;background-color:transparent;margin-bottom: 0px;position: relative;">
 
     <div class="row" style="
     position: absolute;
@@ -77,21 +78,21 @@
     float: left;
     font-size: 14px;
     color: white;    margin-left: 20px;position: relative;padding-left: 16px;">
-            <img src="{{ asset('images/12.8/footer/logo1.png') }}" style="position: absolute;left: -12px;top: 10px" />
+            <img src="{{ asset('images/12.8/footer/logo1.png') }}" style="position: absolute;left: -12px;top: -10px" />
            <p style="display: inline-block;"> {!! getSettingValueByKeyCache('icp') !!} </p>
         </div>
         <div style="
     float: left;
     font-size: 14px;
     color: white;    margin-left: 20px;position: relative;padding-left: 16px;">
-            <img src="{{ asset('images/12.8/footer/logo2.png') }}" style="position: absolute;left: -12px;top: 10px" />
+            <img src="{{ asset('images/12.8/footer/logo2.png') }}" style="position: absolute;left: -12px;top: -10px" />
             <p style="display: inline-block;">{!! getSettingValueByKeyCache('service_tel') !!}</p>
         </div>
         <div style="
     float: left;
     font-size: 14px;
     color: white;    margin-left: 20px;position: relative;padding-left: 16px;">
-            <img src="{{ asset('images/12.8/footer/logo3.png') }}" style="position: absolute;left: -12px;top: 10px"/>
+            <img src="{{ asset('images/12.8/footer/logo3.png') }}" style="position: absolute;left: -12px;top: -10px"/>
             <p style="display: inline-block;">www.eagletags.com</p>
         </div>
     </div>
@@ -117,8 +118,6 @@
 <!-- 页尾公用----------------------------------------------------------------------------end -->
 
 
-
-<script src="http://www.halfrin.com/mobile/assets/js/script.js"></script>
 <script>        
     var mySwiper = new Swiper ('.swiper-container', {
         loop: true,

@@ -77,7 +77,7 @@
         <div style="
     float: left;
     font-size: 14px;
-    color: white;    margin-left: 20px;position: relative;padding-left: 16px;">
+    color: white;    margin-left: 20px;position: relative;padding-left: 16px;    padding-bottom: 20px;">
             <img src="{{ asset('images/12.8/footer/logo1.png') }}" style="position: absolute;left: -12px;top: -10px" />
            <p style="display: inline-block;"> {!! getSettingValueByKeyCache('icp') !!} </p>
         </div>

@@ -10,6 +10,7 @@
             border-radius: 10px;
             /* margin-top: 10px; */
             display: inline-block;
+            margin-left: 10px;
         }
         .jidingjia_cat.active{
            background: rgb(72,159,248);

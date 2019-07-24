@@ -146,7 +146,7 @@
           <div class="zcjy-product-check">
             <img src="{{ $item->pic }}" class="productImage" onerror="this.src= '/images/default.jpg' ">
             <div class="product-name">{{ $item->name }}</div>
-            <div class="remark">激活码：{{ $item->register_code}}</div>
+            <!-- <div class="remark">激活码：{{ $item->register_code}}</div> -->
             <div class="price" style="overflow: hidden;"> <span style="float: left;">¥{{$item->price}}</span> <span style="float: right; margin-right: 0.75rem;">x{{ $item->count }}</span></div>
           </div>
           

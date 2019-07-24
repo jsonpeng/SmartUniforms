@@ -45,7 +45,7 @@
             <div class="zcjy-product-check">
               <img src="{{ $item->pic }}" class="productImage" onerror="this.src= '/images/default.jpg' ">
               <div class="product-name">{{ $item->name }}</div>
-              <div class="remark">激活码：{{ $item->register_code}}</div>
+              <!-- <div class="remark">激活码：{{ $item->register_code}}</div> -->
               <div class="price"> <span style="float: left;">¥{{$item->price}}</span> <span style="float: right; margin-right: 0.75rem;">x{{ $item->count }}</span></div>
             </div>
           @endforeach
@@ -81,7 +81,7 @@
   </div>
 
   @include(frontView('layout.nav'), ['tabIndex' => 4])
-
+  <!-- <div class="remark">激活码：@{{=value2.register_code}}</div> -->
 @endsection
 
 @section('js')
@@ -100,7 +100,6 @@
             <div class="zcjy-product-check">
               <img src="@{{=value2.pic}}" class="productImage" onerror="this.src= '/images/default.jpg' ">
               <div class="product-name">@{{=value2.name}}</div>
-              <div class="remark">激活码：@{{=value2.register_code}}</div>
               <div class="price"> <span style="float: left;">¥@{{=value2.price}}</span> <span style="float: right; margin-right: 0.75rem;">x@{{=value2.count}}</span></div>
             </div>
           @{{~}}

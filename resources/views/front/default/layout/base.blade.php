@@ -179,7 +179,7 @@ document.documentElement.appendChild(iframe);
 window.frames[0].window.alert(name);
 iframe.parentNode.removeChild(iframe);
 }
-<script>
+</script>
 @yield('js')
 <script>
     $("img.lazy").lazyload({effect: "fadeIn"});
